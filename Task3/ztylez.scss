@@ -1,0 +1,112 @@
+// Mixin for centering elements
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  // Mixin for media queries
+  @mixin media($breakpoint) {
+    @media (max-width: $breakpoint) {
+      @content;
+    }
+  }
+  
+  // Define variables
+  $breakpoint-small: 480px;
+  $breakpoint-medium: 801px;
+  $breakpoint-large: 621px;
+  
+  $color-circle-1: #4e89ae;
+  $color-circle-2: #43658b;
+  $color-circle-3: #ed6663;
+  $color-circle-4: #ffa372;
+  $header-footer-color: #8ccff7;
+  $hover-color: #444;
+  
+  // Apply styles
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    background-color: $header-footer-color;
+    text-align: center;
+    padding: 20px;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  
+  .container {
+    text-align: center;
+    &.circles {
+      @include center;
+      flex-wrap: wrap;
+      .circle {
+        border-radius: 50%;
+        transition: background-color 0.3s;
+        margin: 10px;
+        &:hover {
+          background-color: $hover-color;
+        }
+      }
+    }
+  }
+  
+  .row {
+    display: flex;
+    background-color: $color-circle-1;
+    padding: 20px;
+    margin: 10px 0;
+    &:nth-child(2) {
+      background-color: $color-circle-2;
+    }
+    &:nth-child(3) {
+      background-color: $color-circle-3;
+    }
+    &:nth-child(4) {
+      background-color: $color-circle-4;
+    }
+  }
+  
+  .footer {
+    background-color: $header-footer-color;
+    height: 50px;
+    text-align: center;
+  }
+  
+  // Media queries
+  @include media($breakpoint-small) {
+    .header {
+      img {
+        content: url('https://via.placeholder.com/300');
+      }
+    }
+    .circle.group {
+      flex-direction: column;
+    }
+  }
+  
+  @include media($breakpoint-medium) {
+    .header {
+      img {
+        content: url('https://via.placeholder.com/300');
+      }
+    }
+  }
+  
+  @include media($breakpoint-large) {
+    .header {
+      img {
+        content: url('https://via.placeholder.com/400');
+      }
+    }
+}
+    .c.circles.circle.group {
+      flex-direction: row;
+    }
+  
