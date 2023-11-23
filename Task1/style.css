@@ -1,0 +1,91 @@
+/* Style Sheet for body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 5px;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.picture {
+    flex-basis: 50%;
+
+}
+
+.picture img {
+    width: 100%;
+    
+}
+
+.logo {
+    margin-right: 1365px;
+    width: 10;
+}
+
+.logo img {
+    max-height: 100px; 
+    vertical-align: middle;
+}
+
+.text {
+    margin: 20px;
+}
+
+/* Mobile Phone Sizes */
+@media screen and (max-width: 767px) {
+    body {
+        font-size: 12px;
+    }
+
+    .row{
+        display: inline;
+    }
+
+}
+
+/* Tablet/iPad Sizes */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    body {
+        font-size: 14px;
+    }
+
+    .row {
+        flex-wrap: wrap; 
+    }
+
+
+}
+
+/* Laptops and Desktops Sizes */
+@media screen and (min-width: 1024px) {
+    body {
+        font-size: 16px;
+    }
+
+    .row{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        
+    }
+
+}
